@@ -1,3 +1,4 @@
+import Button from "../../common/Button.js/Button";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -8,9 +9,13 @@ const Header = () => {
           className={styles.image}
           alt="women is sitting on the window and reading books"
           src="/images/women.png"></img>
-          <div className={styles.text}>
-            <h1>Welcome! Join to our community</h1>
-          </div>
+        <div className={styles.dots}></div>
+        <div className={styles.text}>
+          <h1>Welcome</h1>
+          <h2>Join to us!</h2>
+          <Button name={"sing in"} />
+          <Button name={"sing up"} />
+        </div>
       </div>
     </div>
   );

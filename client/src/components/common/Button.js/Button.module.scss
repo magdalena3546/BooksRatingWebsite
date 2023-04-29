@@ -1,0 +1,29 @@
+@import '../../../styles/settings.scss';
+
+.btn {
+    background-color: #ABC4AA;
+    margin-right: 2%;
+    color:#fff;
+    font-size: 12px;
+    padding: 4%;
+    border-radius: 15%;
+    transition: .3s;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+@media (min-width: 540px){
+    .btn {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px){
+    .btn {
+        font-size: 18px;
+    }
+}

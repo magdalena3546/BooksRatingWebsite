@@ -1,0 +1,84 @@
+.banner {
+    position: relative;
+    height: 80vh;
+    background-color: #F3DEBA;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 120%;
+        height: 30%;
+        background-color: #fff;
+        border-radius: 50%;
+        transform: translate(-50%, 50%);
+        bottom: 0;
+        left: 50%;
+    }
+    .dots {
+        // background-image: url("../../../../public/images/dots.png");
+        background-repeat: no-repeat;
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: -10%;
+        right: -30%;
+    }
+    .image {
+        position: absolute;
+        height: 90%;
+        top: 10%;
+        left: -25%;
+    }
+    .text {
+        position: absolute;
+        color: #402E32;
+        // color: #212427;
+        top: 40%;
+        left: 75%;
+        transform: translateX(-50%);
+        h2 {
+            margin-left: 2%;
+            margin-bottom: 5%;
+        }
+    }
+}
+
+@media (min-width: 390px){
+    .banner {
+        .image {
+            left: -40%;
+        }
+    }
+}
+
+@media (min-width: 540px) and (orientation: portrait){
+    .banner {
+        .image {
+            height: 100%;
+            left: -25%;
+            top: 5%;
+        }
+    }
+}
+
+@media (orientation: landscape){
+    .banner {
+        height: 90vh;
+        .image {
+            height: 100%;
+            left: -5%;
+            top: 0;
+        }
+        .text {
+            top: 20%;
+            left: 60%;
+        }
+    }
+}
+
+@media (min-width: 1600px){
+    .banner {
+        .text {
+            margin: 5% 2% 10%;
+        }
+    }
+}

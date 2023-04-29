@@ -1,7 +1,11 @@
-import Header from "../../Header/Header";
+import Header from "../../views/Header/Header";
 
 const Home = () => {
-  return <Header />;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Home;
