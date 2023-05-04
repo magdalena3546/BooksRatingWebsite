@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: $font_text;
-    font-size: 16px;
+    font-size: 14px;
+    // color: #402E32;
+    color: #212427;
 }
 
 html, body {
@@ -23,17 +25,27 @@ h2 {
     font-size: 16px;
 }
 
+h3 {
+    font-size: 25px;
+}
+
 a {
     text-decoration: none;
     background: #000;
 }
 
 @media (min-width: 540px) {
+    * {
+        font-size: 16px;
+    }
     h1 {
         font-size: 45px;
     }
     h2 {
         font-size: 25px;
+    }
+    h3 {
+        font-size: 30px;
     }
 }
 
@@ -44,6 +56,9 @@ a {
     h2 {
         font-size: 30px;
     }
+    h3 {
+        font-size: 35px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -52,5 +67,17 @@ a {
     }
     h2 {
         font-size: 35px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 1600px) {
+    h1 {
+        font-size: 70px;
+    }
+    h3 {
+        font-size: 60px;
     }
 }

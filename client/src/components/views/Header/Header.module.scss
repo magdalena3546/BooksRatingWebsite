@@ -2,26 +2,18 @@
     position: relative;
     height: 80vh;
     background-color: #F3DEBA;
-    &:before {
-        position: absolute;
-        content: '';
-        width: 120%;
-        height: 30%;
-        background-color: #fff;
-        border-radius: 50%;
-        transform: translate(-50%, 50%);
-        bottom: 0;
-        left: 50%;
-    }
-    .dots {
-        // background-image: url("../../../../public/images/dots.png");
-        background-repeat: no-repeat;
-        height: 50%;
-        width: 100%;
-        position: absolute;
-        top: -10%;
-        right: -30%;
-    }
+    // &:before {
+    //     position: absolute;
+    //     content: '';
+    //     width: 120%;
+    //     height: 20%;
+    //     background-color: #fff;
+    //     border-radius: 50% 50% 0 0;
+    //     transform: translate(-50%, 50%);
+    //     bottom: 0;
+    //     left: 50%;
+    // }
+ 
     .image {
         position: absolute;
         height: 90%;
@@ -30,7 +22,7 @@
     }
     .text {
         position: absolute;
-        color: #402E32;
+        // color: #402E32;
         // color: #212427;
         top: 40%;
         left: 75%;
@@ -40,6 +32,10 @@
             margin-bottom: 5%;
         }
     }
+}
+
+.wave {
+    margin-bottom: -15%;
 }
 
 @media (min-width: 390px){
@@ -62,7 +58,6 @@
 
 @media (orientation: landscape){
     .banner {
-        height: 90vh;
         .image {
             height: 100%;
             left: -5%;
