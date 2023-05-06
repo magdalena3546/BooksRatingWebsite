@@ -29,6 +29,11 @@ h3 {
     font-size: 25px;
 }
 
+h4 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
 a {
     text-decoration: none;
     background: #000;
@@ -47,6 +52,10 @@ a {
     h3 {
         font-size: 30px;
     }
+
+    h4 {
+        font-size: 28px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -58,6 +67,13 @@ a {
     }
     h3 {
         font-size: 35px;
+    }
+
+}
+
+@media (min-width: 768px) and (orientation: portrait){
+    h4 {
+        font-size: 33px;
     }
 }
 
@@ -71,6 +87,11 @@ a {
     h3 {
         font-size: 40px;
     }
+
+    h4 {
+        font-size: 38px;
+        font-weight: bold;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -79,5 +100,9 @@ a {
     }
     h3 {
         font-size: 60px;
+    }
+
+    h4 {
+        font-size: 50px;
     }
 }
