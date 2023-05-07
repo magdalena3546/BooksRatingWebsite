@@ -1,0 +1,39 @@
+@import '../../../styles/settings.scss';
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0;
+    .icons {
+        display: flex;
+        padding-right: 3%;
+        margin-left: 1%;
+        .iconMedia {
+            width: 40px;
+            height: 40px;
+            margin-left: 5%;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+            transition: $transition;
+            cursor: pointer;
+        }
+    }
+    .text {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper{
+        .icons {
+            .iconMedia{
+                &:hover {
+                    background-color: $bgc_btn;
+                    color: $color_white;
+                }
+            }
+        }
+    }
+}

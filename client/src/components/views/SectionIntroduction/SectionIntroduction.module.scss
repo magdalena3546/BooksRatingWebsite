@@ -4,8 +4,10 @@
     // border-radius: 30px;
     // box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     background-color: #F9F5E7;
-    z-index: -1;
-
+   
+    .wave {
+        margin-top: -16%;
+    }
     .rocket, .planet, .space{
         position: absolute;
         height: 50%;
@@ -36,6 +38,7 @@
    .text {
         align-self: center;
         margin-left: 5%;
+        z-index: 3;
         h3 {
             white-space: nowrap;
         }
