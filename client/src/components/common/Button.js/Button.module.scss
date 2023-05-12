@@ -1,16 +1,15 @@
 @import '../../../styles/settings.scss';
 
 .btn {
-    background-color: #ABC4AA;
+    background-color: $bgc_btn;
     margin-right: 2%;
-    color:#fff;
+    color: $color_white;
     font-size: 12px;
     padding: 5%;
     border-radius: 15%;
-    transition: .3s;
+    transition: $transition;
     cursor: pointer;
     display: inline-block;
-
     &:hover {
         scale: 1.1;
     }

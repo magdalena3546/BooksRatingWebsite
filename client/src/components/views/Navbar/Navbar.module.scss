@@ -1,0 +1,128 @@
+@import '../../../styles/settings.scss';
+
+.nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 8vh;
+    .logo {
+        p{
+        font-family: $font_logo;
+        font-size: 30px;
+        padding: 2% 3%;
+        }
+    }
+    .menu {
+        .navigation {
+            display: none;
+        }
+        .mobileNavigation {
+            display: block;
+            .hamburger {
+                font-size: 40px;
+                position: absolute;
+                cursor: pointer;
+                color: $color_text;
+                top: 0;
+                right: 5%;
+            }
+            .list {
+                display: flex;
+                position: absolute;
+                top: 8vh;
+                right: 0;
+                width: 100%;
+                padding: 0 5%;
+                background-color: $color_white;
+                list-style: none;
+                flex-direction: column;
+                border-top: 1px solid $bgc_btn;
+                li {
+                    padding: 5%;
+                    text-transform: uppercase;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+ 
+}
+
+.fixed {
+    background-color: $color_white;
+    transition: $transition;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+@media (min-width: 393px) {
+    .nav {
+        height: 5vh;
+    .menu {
+        .mobileNavigation {
+            .list {
+                top: 5vh;
+                li {
+                    padding: 4%;
+                }
+            }
+        }
+    }
+}
+}
+
+@media (orientation: landscape) {
+    .nav {
+        height: 12vh;
+    .menu {
+        .mobileNavigation {
+            .list {
+                top: 12vh;
+                li {
+                    padding: 4%;
+                }
+            }
+        }
+    }
+}
+}
+
+@media (min-width: 990px) {
+    .nav {
+        height: 8vh;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+    .logo {
+        p {
+            font-size: 40px;
+        }
+    }
+    .menu {
+    .navigation {
+        display: block;
+        
+        .list {
+            display: flex;
+            list-style: none;
+            li {
+                transition: $transition;
+                text-transform: uppercase;
+                padding: 0 4%;
+                cursor: pointer;
+                &:hover {
+                    color: $bgc_btn;
+                }
+            }
+        }
+    }
+   
+        .mobileNavigation {
+            display: none;
+        }
+    }
+}
+}
