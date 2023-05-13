@@ -8,11 +8,24 @@
     left: 0;
     z-index: 5;
     height: 8vh;
+    align-items: center;
     .logo {
         p{
         font-family: $font_logo;
         font-size: 30px;
         padding: 2% 3%;
+        }
+    }
+    .personalData {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 13%;
+        img{
+            border-radius: 50%;
+            width: 5vh;
+            height: 5vh;
         }
     }
     .menu {
@@ -61,6 +74,15 @@
 @media (min-width: 393px) {
     .nav {
         height: 5vh;
+        .personalData {
+            img{
+                width: 4vh;
+                height: 4vh;
+            }
+            p {
+                margin-left: 2%;
+            }
+        }
     .menu {
         .mobileNavigation {
             .list {
@@ -77,6 +99,14 @@
 @media (orientation: landscape) {
     .nav {
         height: 12vh;
+        .personalData {
+            img{
+                width: 8vh;
+                height: 8vh;
+            }
+        }
+      
+      
     .menu {
         .mobileNavigation {
             .list {
@@ -101,6 +131,13 @@
             font-size: 40px;
         }
     }
+    .personalData {
+        img{
+            width: 6vh;
+            height: 6vh;
+        }
+    }
+  
     .menu {
     .navigation {
         display: block;
