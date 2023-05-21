@@ -1,0 +1,47 @@
+@import '../../../styles/settings.scss';
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    .search {
+        margin-top: 15%;
+        position: relative;
+        input{
+            border-radius: 5px;
+            border: 1px solid $bgc_btn;
+            caret-color:  $bgc_btn;
+        }
+        button {
+            background-color:  transparent;
+            border-radius: 5px;
+            border: none;
+            padding: 1%;
+            position: absolute;
+            right: 0;
+            .icon {
+                color:  $bgc_btn;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        .search {
+            margin-top: 5%;
+            input {
+                padding: 2%;
+                width: 50vh;
+                border-radius: 30px;
+            }
+            button {
+                padding: 2%;
+                border-radius: 30px;
+                .icon {
+                    font-size: 1.7em;
+                }
+            }
+        }
+    }
+}

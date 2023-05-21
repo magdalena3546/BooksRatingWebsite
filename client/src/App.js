@@ -5,6 +5,7 @@ import "./styles/global.scss";
 import Login from "./components/pages/Login/Login";
 import { useEffect, useState } from "react";
 import Navbar from "./components/views/Navbar/Navbar";
+import Main from "./components/pages/Main/Main";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -38,7 +39,11 @@ const App = () => {
     <div>
       {user && <Navbar user={user} />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        {user ? (
+          <Route path="/" element={<Main />} />
+        ) : (
+          <Route path="/" element={<Home />} />
+        )}
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
