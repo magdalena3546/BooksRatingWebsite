@@ -1,5 +1,5 @@
 import styles from "./SectionIntroduction.module.scss";
-import Button from "../../common/Button.js/Button";
+import Button from "../../common/Button/Button.js";
 
 const SectionIntroduction = () => {
   return (

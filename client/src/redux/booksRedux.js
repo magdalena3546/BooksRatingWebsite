@@ -22,7 +22,9 @@ export const fetchBooks = (search) => {
         `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${process.env.REACT_APP_API_BOOK_KEY}&maxResults=30`
       )
       .then((res) => dispatch(loadBooks(res.data.items)))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert("Sorry, we don't find this, please try again!");
+      });
   };
 };
 

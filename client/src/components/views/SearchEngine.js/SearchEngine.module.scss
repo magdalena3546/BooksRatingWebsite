@@ -1,8 +1,8 @@
 @import '../../../styles/settings.scss';
 .wrapper {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
+    margin-bottom: 15%;
     .search {
         margin-top: 15%;
         position: relative;
@@ -32,7 +32,7 @@
             margin-top: 5%;
             input {
                 padding: 2%;
-                width: 50vh;
+                width: 60vh;
                 border-radius: 30px;
             }
             button {

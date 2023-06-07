@@ -8,13 +8,16 @@ import { fetchBooks } from "../../../redux/booksRedux";
 
 const SearchEngine = () => {
   const [search, setSearch] = useState("");
-  // const [bookData, setBookData] = useState([]);
   const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(fetchBooks(search));
+  };
   const searchBook = (e) => {
     if (e.key === "Enter") {
-      dispatch(fetchBooks(search));
+      handleClick();
     }
   };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.search}>
@@ -25,7 +28,7 @@ const SearchEngine = () => {
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={searchBook}
         />
-        <button>
+        <button onClick={handleClick}>
           <FontAwesomeIcon className={styles.icon} icon={faSearchengin} />
         </button>
       </div>

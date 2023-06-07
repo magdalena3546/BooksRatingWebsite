@@ -1,5 +1,4 @@
-import Button from "../../common/Button.js/Button";
-
+import Button from "../../common/Button/Button.js";
 import styles from "./Header.module.scss";
 
 const Header = () => {
