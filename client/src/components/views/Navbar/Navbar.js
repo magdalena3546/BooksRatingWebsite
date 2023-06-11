@@ -20,8 +20,8 @@ const Navbar = (props) => {
         <p>BookFreak</p>
       </div>
       <div className={styles.personalData}>
-        <img src={props.user.photos[0].value} alt="user profile" />
-        <p>{props.user.displayName}</p>
+        <img src={props.user.photo} alt="user profile" />
+        <p>{props.user.userName}</p>
       </div>
       <div className={styles.menu}>
         <MobileNavigation />
