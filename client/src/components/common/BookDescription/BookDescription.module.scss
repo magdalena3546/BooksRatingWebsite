@@ -8,6 +8,7 @@
     width: 85vw;
     border-radius: 30px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
     .image { 
         width:35vw;
         height:55vw;
@@ -22,6 +23,14 @@
             height: 100%;
             object-fit:cover;
         }
+    }
+    .icon {
+        font-size: 40px;
+        position: absolute;
+        cursor: pointer;
+        color: $bgc_btn;
+        top: 0;
+        right: 5%;
     }
     .text {
         width: 50vw;

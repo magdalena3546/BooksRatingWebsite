@@ -2,16 +2,73 @@ import styles from "./BookDescription.module.scss";
 import Button from "../Button/Button.js";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
+import { RiCloseFill } from "react-icons/ri";
+import Modal from "../Modal/Modal";
 
-const BookDescription = ({ image, title, authors, link }) => {
-  const [rating, setRating] = useState(null);
+const BookDescription = ({
+  image,
+  title,
+  authors,
+  link,
+  id,
+  userId,
+  userRate,
+}) => {
+  const [rating, setRating] = useState(userRate);
   const [hover, setHover] = useState(null);
- 
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleClick = async (rate) => {
+    setRating(rate);
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/users/${userId}`,
+        {
+          bookId: id,
+          rate: rate,
+        }
+      );
+      console.log("Returned data:", response);
+    } catch (e) {
+      console.log(`Axios request failed: ${e}`);
+    }
+  };
+
+  const handleRemoveRate = async () => {
+    setOpenModal(false);
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/users/removeRate/${userId}`,
+        {
+          bookId: id,
+        }
+      );
+    } catch (err) {
+      alert("Sorry, something go wrong! Try agin!");
+    }
+  };
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
   return (
     <div className={styles.wrapper}>
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        onRemove={() => handleRemoveRate()}
+      />
       <div className={styles.image}>
         <img src={image} alt="book cover" />
       </div>
+      {rating && (
+        <RiCloseFill
+          className={styles.icon}
+          onClick={() => handleOpenModal()}
+        />
+      )}
       <div className={styles.text}>
         <div className={styles.stars}>
           {[...Array(5)].map((star, index) => {
@@ -22,7 +79,7 @@ const BookDescription = ({ image, title, authors, link }) => {
                   type="radio"
                   name="rating"
                   value={currentRating}
-                  onClick={() => setRating(currentRating)}
+                  onClick={() => handleClick(currentRating)}
                 />
                 <FaStar
                   className={styles.star}

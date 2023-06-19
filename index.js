@@ -10,9 +10,6 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-// mongoose.connect(process.env.DB_URL, () => {
-//   console.log("connected to md");
-// });
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -45,7 +42,7 @@ app.use(passport.session());
 app.use(
   cors({
     origin: "http://localhost:3000",
-    methods: "GET, POST, DELETE, PUT",
+    methods: "GET, POST, DELETE, PUT, PATCH",
     credentials: true,
   })
 );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 
@@ -17,14 +18,16 @@ const NavLinks = (props) => {
         animate={animateTo}
         transition={{ delay: 0.05 }}
         onClick={logout}>
-        logout
+        <Link className={styles.link}>logout</Link>
       </motion.li>
       <motion.li
         initial={animateFrom}
         animate={animateTo}
         transition={{ delay: 0.1 }}
         onClick={() => props.isMobile && props.closeMobileMenu()}>
-        books
+        <Link to="/mybooks" className={styles.link}>
+          mybooks
+        </Link>
       </motion.li>
     </ul>
   );

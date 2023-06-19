@@ -58,6 +58,9 @@
                     text-transform: uppercase;
                     text-align: center;
                     cursor: pointer;
+                    .link {
+                        color: $color_text;
+                    }
                 }
             }
         }
@@ -150,8 +153,12 @@
                 text-transform: uppercase;
                 padding: 0 4%;
                 cursor: pointer;
-                &:hover {
-                    color: $bgc_btn;
+                .link {
+                    color: $color_text;
+                    transition: $transition;
+                    &:hover {
+                        color: $bgc_btn;
+                    }
                 }
             }
         }

@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: $font_text;
-    // color: #402E32;
 }
 *:focus {
     outline: none;
@@ -42,7 +41,6 @@ h5 {
 
 a {
     text-decoration: none;
-    background: #000;
 }
 
 @media (min-width: 540px) {

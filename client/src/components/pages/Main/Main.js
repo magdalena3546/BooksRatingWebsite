@@ -3,9 +3,9 @@ import { getAllBooks } from "../../../redux/booksRedux";
 import SearchEngine from "../../views/SearchEngine.js/SearchEngine";
 import styles from "./Main.module.scss";
 import BookDescription from "../../common/BookDescription/BookDescription";
-const Main = () => {
-  const books = useSelector(getAllBooks);
 
+const Main = ({ userId, userRate }) => {
+  const books = useSelector(getAllBooks);
   return (
     <div className={styles.wrapper}>
       <SearchEngine />
@@ -15,6 +15,7 @@ const Main = () => {
             let thumbnail =
               book.volumeInfo.imageLinks &&
               book.volumeInfo.imageLinks.smallThumbnail;
+            let stars = userRate.find((elm) => elm.bookId === book.id);
             if (
               thumbnail !== undefined &&
               book.volumeInfo.authors !== undefined
@@ -27,6 +28,9 @@ const Main = () => {
                     title={book.volumeInfo.title}
                     authors={book.volumeInfo.authors}
                     link={book.volumeInfo.infoLink}
+                    id={book.id}
+                    userId={userId}
+                    userRate={stars ? stars.rate : null}
                   />
                 </div>
               );

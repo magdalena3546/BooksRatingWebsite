@@ -5,7 +5,12 @@ const userSchema = new Schema({
   userName: String,
   photo: String,
   googleId: String,
-  stars: Array,
+  stars: [
+    {
+      bookId: String,
+      rate: Number,
+    },
+  ],
 });
 
 const User = mongoose.model("user", userSchema);

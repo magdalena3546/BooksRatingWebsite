@@ -20,11 +20,11 @@ const SectionIntroduction = () => {
         <div className={styles.text}>
           <h3>Let's go!</h3>
           <p>Join to us and discover new Worlds!</p>
-          <Button name={"start"} />
+          <Button link="/login" name={"start"} />
         </div>
         <img
           className={styles.image}
-          alt="women is laying on the floor and reading books"
+          alt="women is laying on the floor and reading book"
           src="/images/womenWithBook.png"></img>
       </div>
     </div>

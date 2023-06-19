@@ -6,9 +6,11 @@ import Login from "./components/pages/Login/Login";
 import { useEffect, useState } from "react";
 import Navbar from "./components/views/Navbar/Navbar";
 import Main from "./components/pages/Main/Main";
+import UsersBooks from "./components/pages/UsersBooks/UsersBooks";
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [userRate, setUserRate] = useState(null);
 
   useEffect(() => {
     const getUser = () => {
@@ -27,6 +29,7 @@ const App = () => {
         })
         .then((resObject) => {
           setUser(resObject.user);
+          setUserRate(resObject.user.stars);
         })
         .catch((err) => {
           console.log(err);
@@ -40,11 +43,20 @@ const App = () => {
       {user && <Navbar user={user} />}
       <Routes>
         {user ? (
-          <Route path="/" element={<Main />} />
+          <Route
+            path="/"
+            element={<Main userId={user._id} userRate={userRate} />}
+          />
         ) : (
           <Route path="/" element={<Home />} />
         )}
         <Route path="/login" element={<Login />} />
+        {user && (
+          <Route
+            path="/mybooks"
+            element={<UsersBooks userId={user._id} userRate={userRate} />}
+          />
+        )}
       </Routes>
       <Footer />
     </div>

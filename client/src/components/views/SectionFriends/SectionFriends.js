@@ -15,8 +15,8 @@ const SectionFriends = () => {
       </svg>
       <div className={styles.imageFriends}></div>
       <div className={styles.text}>
-        <h3>Meet other book lovers!</h3>
-        <p>Share your opinion with others and make new friends</p>
+        <h3>Meet your new favourite characters!</h3>
+        <p>Find something you would love</p>
       </div>
       <svg
         className={styles.waveBottom}
@@ -31,7 +31,7 @@ const SectionFriends = () => {
         <div className={styles.imageCoffee}>
           <div className={styles.words}>
             <h4 className={styles.white}>Just grab a coffee and gooo!</h4>
-            <Button name={"gooo"} />
+            <Button link="/login" name={"gooo"} />
           </div>
         </div>
       </div>
