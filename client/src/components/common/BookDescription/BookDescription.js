@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { RiCloseFill } from "react-icons/ri";
 import Modal from "../Modal/Modal";
+import { API_URL } from "../../../config";
 
 const BookDescription = ({
   image,
@@ -22,16 +23,12 @@ const BookDescription = ({
   const handleClick = async (rate) => {
     setRating(rate);
     try {
-      const response = await axios.patch(
-        `http://localhost:5000/users/${userId}`,
-        {
-          bookId: id,
-          rate: rate,
-        }
-      );
-      console.log("Returned data:", response);
-    } catch (e) {
-      console.log(`Axios request failed: ${e}`);
+      const response = await axios.patch(`${API_URL}/users/${userId}`, {
+        bookId: id,
+        rate: rate,
+      });
+    } catch (err) {
+      alert("Sorry, something go wrong! Try agin!");
     }
   };
 
@@ -39,7 +36,7 @@ const BookDescription = ({
     setOpenModal(false);
     try {
       const response = await axios.patch(
-        `http://localhost:5000/users/removeRate/${userId}`,
+        `${API_URL}/users/removeRate/${userId}`,
         {
           bookId: id,
         }

@@ -1,12 +1,12 @@
 {
-  "name": "books",
+  "name": "BookFreak",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Magdalena Małek",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
@@ -19,6 +19,7 @@
     "nodemon": "^2.0.22",
     "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
     "react-dotenv": "^0.1.3"
   }
 }

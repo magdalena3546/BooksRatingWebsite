@@ -7,6 +7,7 @@ const userRoute = require("./routes/user.routes");
 require("dotenv").config();
 const passportSetup = require("./passport");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const app = express();
 
@@ -22,13 +23,6 @@ db.once("open", () => {
 });
 db.on("error", (err) => console.log("Error " + err));
 
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: false,
-  })
-);
-
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 10000,
@@ -39,17 +33,32 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+if (process.env.NODE_ENV !== "production") {
+  app.use(
+    cors({
+      origin: "*",
+      methods: "GET, POST, DELETE, PUT, PATCH",
+      credentials: true,
+    })
+  );
+}
+
+app.listen(process.env.PORT || "5000", () => {
+  console.log("Server is running");
+});
+
+app.use(express.json());
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: "GET, POST, DELETE, PUT, PATCH",
-    credentials: true,
+  express.urlencoded({
+    extended: false,
   })
 );
 
-app.use("/auth", authRoute);
-app.use("/users", userRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
-app.listen("5000", () => {
-  console.log("Server is running");
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });

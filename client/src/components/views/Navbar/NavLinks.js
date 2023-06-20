@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import { motion } from "framer-motion";
+import { API_URL } from "../../../config";
 
 const NavLinks = (props) => {
   const animateFrom = { opacity: 0, y: -40 };
   const animateTo = { opacity: 1, y: 0 };
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open(`${API_URL}/auth/logout`, "_self");
     if (props.isMobile) {
       props.closeMobileMenu();
     }
@@ -24,6 +25,15 @@ const NavLinks = (props) => {
         initial={animateFrom}
         animate={animateTo}
         transition={{ delay: 0.1 }}
+        onClick={() => props.isMobile && props.closeMobileMenu()}>
+        <Link to="/" className={styles.link}>
+          home
+        </Link>
+      </motion.li>
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        transition={{ delay: 0.2 }}
         onClick={() => props.isMobile && props.closeMobileMenu()}>
         <Link to="/mybooks" className={styles.link}>
           mybooks

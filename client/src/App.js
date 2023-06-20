@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/views/Navbar/Navbar";
 import Main from "./components/pages/Main/Main";
 import UsersBooks from "./components/pages/UsersBooks/UsersBooks";
+import { API_URL } from "./config";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch(`${API_URL}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -37,7 +38,7 @@ const App = () => {
     };
     getUser();
   }, []);
-  console.log(user);
+
   return (
     <div>
       {user && <Navbar user={user} />}
